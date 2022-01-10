@@ -3,7 +3,7 @@ entries:
   argo-helmtest-ns:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-01-11T03:33:05.921646+09:00"
+    created: "2022-01-11T04:48:39.289428+09:00"
     description: A Helm chart for Kubernetes
     digest: aa3bfa82c0a46e6cffdc207c3bff97d4a72cfa875ee5544fe9bd221fab11bd9a
     name: argo-helmtest-ns
@@ -11,4 +11,4 @@ entries:
     urls:
     - https://shindongsun0.github.io/helm-charts/submodule/argo-helmtest-ns-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-11T03:33:05.921012+09:00"
+generated: "2022-01-11T04:48:39.287938+09:00"
