@@ -3,12 +3,12 @@ entries:
   argoHelmTestCommon:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-01-11T00:19:44.558195+09:00"
+    created: "2022-01-11T00:30:46.156625+09:00"
     description: A Helm chart for Kubernetes
     digest: 29e123a848344c51ebe237835cc3aca99b4317e3ca3d2ad67ab4e71a172361fa
     name: argoHelmTestCommon
     type: application
     urls:
-    - https://shindongsun0.github.io/helm-charts/stable/argoHelmTestCommon-0.1.0.tgz
+    - https://shindongsun0.github.io/helm-charts/common/argoHelmTestCommon-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-11T00:19:44.554822+09:00"
+generated: "2022-01-11T00:30:46.151294+09:00"
