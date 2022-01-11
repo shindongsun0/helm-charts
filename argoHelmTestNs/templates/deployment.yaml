@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: {{ include "argoHelmTestNs.fullname" . }}
   namespace: "{{ .Values.global.ns }}-{{ .Values.global.version }}"
@@ -60,3 +60,8 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+  strategy:
+    blueGreen:
+      activeService: "{{ include "argoHelmTestNs.fullname" . }}-active"
+      previewService: "{{ include "argoHelmTestNs.fullname" . }}-preview"
+      autoPromotionEnabled: false

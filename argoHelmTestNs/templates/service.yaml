@@ -1,7 +1,25 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "argoHelmTestNs.fullname" . }}
+  name: "{{ include "argoHelmTestNs.fullname" . }}-active"
+  namespace: "{{ .Values.global.ns }}-{{ .Values.global.version }}"
+  labels:
+    {{- include "argoHelmTestNs.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "argoHelmTestNs.selectorLabels" . | nindent 4 }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ include "argoHelmTestNs.fullname" . }}-preview"
   namespace: "{{ .Values.global.ns }}-{{ .Values.global.version }}"
   labels:
     {{- include "argoHelmTestNs.labels" . | nindent 4 }}
