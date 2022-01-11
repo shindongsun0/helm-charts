@@ -3,7 +3,7 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "argoHelmTestNs.fullname" . }}
-  namespace: {{ .Values.global.ns }}
+  namespace: "{{ .Values.global.ns }}-{{ .Values.global.version }}"
   labels:
     {{- include "argoHelmTestNs.labels" . | nindent 4 }}
 spec:

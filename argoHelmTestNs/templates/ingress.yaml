@@ -16,7 +16,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
-  namespace: {{ .Values.global.ns }}
+  namespace: "{{ .Values.global.ns }}-{{ .Values.global.version }}"
   labels:
     {{- include "argoHelmTestNs.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
